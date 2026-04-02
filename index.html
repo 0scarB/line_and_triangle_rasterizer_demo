@@ -1,10 +1,12 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Rub-Cube Render</title>
+        <title>Line & Triangle Rasterizer Demo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>
         html, body, canvas {
+            font-family: system-ui, sans-serif;
+            font-weight: normal;
             margin: 0;
             padding: 0;
             width: 100%;
@@ -12,10 +14,33 @@
             background-color: black;
             overflow: hidden;
         }
+        div {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        label, span {
+            color: white;
+        }
         </style>
         <script src="index.js"></script>
     </head>
     <body>
-        <canvas></canvas>
+        <canvas id="canvas"></canvas>
+        <div>
+            <label for="pixel-size-slider">Pixel Size</label>
+            <input type="range"
+                id="pixel-size-slider"
+                name="pixel-size-slider"
+                min="1" max="8" value="2"></input>
+            <input type="number"
+                id="pixel-size-slider-value"
+                name="pixel-size-slider-value"
+                min="1" max="8" value="2"></input>
+            <button id="reset-points-button">Reset Positions</button>
+        </div>
     </body>
 </html>
